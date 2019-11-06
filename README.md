@@ -2,6 +2,6 @@
 DigitalCrafts Phase 1 Project
 
 
-Kevin 
-Josh
-Kevin
+Kevin Abbott
+Josh Cannedy
+Kevin Capule
