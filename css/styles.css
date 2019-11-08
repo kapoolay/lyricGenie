@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: Helvetica, sans-serif;
+
     width:100%;
     background-color:rgba(87, 86, 86, 0.75);
 }
@@ -24,6 +25,7 @@ body {
     display:flex;
     flex-direction:row;
     border-radius:10px;
+
 }
   
 .topnav a {
