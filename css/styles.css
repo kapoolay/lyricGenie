@@ -122,4 +122,16 @@ body {
     background-image: url('/lyricGenie/images/genieLamp.png');
 }
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        MEET THE TEAM PAGE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+.icons {
+    max-width: 50px;
+    max-height: 50px;
+    border: solid 2px transparent;
+}
+
+.icons:hover {
+    border: solid #fff200;
+}
