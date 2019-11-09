@@ -55,7 +55,6 @@ body {
     padding-top:10px;
 }
 
-/*ABOUT US BOXES*/
 
 .boxes{
     background-color:rgba(87, 86, 86,0);
@@ -84,20 +83,11 @@ body {
     border-radius:33%;
 }
 
-/*BACKGROUND BODY*/
-
 .backgroundHome {
     width:65%;
     height:auto;
     /* margin-left:15%; */
     position:relative;
-}
-
-/*HOME PAGE CLOUD CONTENT*/
-
-.mainDiv{
-    position: relative;
-    text-align: center;
 }
 
 .greeting{
@@ -117,18 +107,21 @@ body {
 }
 
 
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         LOGIN PAGE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 .login {
-    margin-top: 15%;
+    margin-top: 10%;
     border: 2px #fff20013 solid;
     border-radius: 10px;
     padding: 10px;
     background: #fff20035;
     background-image: url('/lyricGenie/images/genieLamp.png');
 }
+
+
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         MEET THE TEAM PAGE
