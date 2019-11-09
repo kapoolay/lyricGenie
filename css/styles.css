@@ -1,3 +1,7 @@
+*{
+    width:100%;
+}
+
 body {
     margin: 0;
     font-family: Helvetica, sans-serif;
@@ -6,9 +10,7 @@ body {
     background-color:rgba(87, 86, 86, 0.75);
 }
 
-*{
-    width:100%;
-}
+
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         NAVIGATION BAR
@@ -62,18 +64,6 @@ body {
 
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        BACKGROUND BODY
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-.backgroundHome {
-    width:65%;
-    height:auto;
-    /* margin-left:15%; */
-    position:relative;
-}
-
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         HOME PAGE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -81,6 +71,13 @@ body {
 .mainDiv{
     position: relative;
     text-align: center;
+}
+
+.backgroundHome {
+    width:65%;
+    height:auto;
+    /* margin-left:15%; */
+    position:relative;
 }
 
 .greeting{
@@ -100,6 +97,7 @@ body {
 }
 
 
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         LOGIN PAGE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -112,6 +110,8 @@ body {
     background: #fff20035;
     background-image: url('/lyricGenie/images/genieLamp.png');
 }
+
+
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         MEET THE TEAM PAGE
