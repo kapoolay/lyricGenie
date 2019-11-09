@@ -9,6 +9,10 @@ body {
 *{
     width:100%;
 }
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        NAVIGATION BAR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   
 .topnav {
     display:flex;
@@ -55,28 +59,11 @@ body {
     padding-top:10px;
 }
 
-/*ABOUT US BOXES*/
 
-.boxes{
-    background-color: rgba(0, 0, 0, 0); 
-    margin: 10px;
-    text-align: center;
-    font-size: 20;
-    margin: 50px;
-    display: flex;
-    flex-direction:row;
-}
 
-.boxes-inside{
-    margin:30px;
-}
-
-.boxes-inside img{
-    width:33.33%px;
-    height: 250px;
-}
-
-/*BACKGROUND BODY*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        BACKGROUND BODY
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 .backgroundHome {
     width:65%;
@@ -85,8 +72,12 @@ body {
     position:relative;
 }
 
-/*HOME PAGE CLOUD CONTENT*/
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        HOME PAGE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*CLOUD CONTENT*/
 .mainDiv{
     position: relative;
     text-align: center;
@@ -134,4 +125,25 @@ body {
 
 .icons:hover {
     border: solid #fff200;
+}
+
+/*ABOUT US BOXES*/
+
+.boxes{
+    background-color: rgba(0, 0, 0, 0); 
+    margin: 10px;
+    text-align: center;
+    font-size: 20;
+    margin: 50px;
+    display: flex;
+    flex-direction:row;
+}
+
+.boxes-inside{
+    margin:30px;
+}
+
+.boxes-inside img{
+    width:33.33%px;
+    height: 250px;
 }
