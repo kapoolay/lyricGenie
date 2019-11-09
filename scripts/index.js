@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p>${track.trackName}</p>
                 <button onclick="getLyrics('${track.trackId}')" data-trackId='${track.trackId}' data-artistId='${track.artistId}'>Get Lyrics</button>
             </div>
+            <div id='lyricsPlace'>
+            </div> 
             `
         })
         element.innerHTML = songListHTML.join('');
@@ -54,8 +56,16 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 const getLyrics = (trackId) => {
-    console.log(trackId)
     axios.get('https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=' + trackId + '&apikey=a311818244ac163b84e06d86a8ec727f').then(function (response) {
-        console.log(response);
+        let lyrics = response.data.message.body.lyrics.lyrics_body
+        console.log(lyrics);
+
+        var loadLyrics = document.getElementById('lyricsPlace');
+        loadLyrics.innerHTML = lyrics;
     });
+
 };
+
+function renderLyrics(lyrics, songElement) {
+    console.log(lyrics, songElement)
+} ;
