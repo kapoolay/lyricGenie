@@ -125,11 +125,15 @@ body {
     height: 250px;
     border-radius:33%;
 }
+
+
 .card{
     margin-top:50px;
     background-color:rgba(87, 86, 86, 0);
     border:none;
 }
+
+
 .badge{
     margin-top:20px;
     background-color:rgba(87, 86, 86, 0);
@@ -139,6 +143,7 @@ body {
     justify-content: center;
     text-align: center;
 }
+
 hr {
     width:80%;
 }
