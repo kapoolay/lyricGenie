@@ -5,6 +5,8 @@
 <head>
     <meta charset='utf-8'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="http://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOP"></script>
     <title>Lyric Genie</title>
     <link rel='stylesheet' type='text/css' href='css/styles.css'>
 </head>
@@ -22,6 +24,15 @@
                 <img class="img-fluid mainLogo" src="images/logoGold.png">
             </div>
   </div>
+
+  <!-- Search form -->
+    <form id="search-form">
+        <div class="input-group input-group-lg">
+            <input id="search-bar" class="form-control search-bar" placeholder="Search for a song...">    
+            <button class="btn btn-dark input-group-btn" type="submit" >Search</button>
+        </div>
+    </form>
+   
 
     <script src='scripts/index.js'></script>
 </body>
