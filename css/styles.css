@@ -1,15 +1,18 @@
 *{
     width:100%;
 }
+
 body {
     margin: 0;
     font-family: Helvetica, sans-serif;
     width:100%;
     background-color:rgba(87, 86, 86, 0.75);
 }
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         NAVIGATION BAR
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
   
 .topnav {
     display:flex;
@@ -50,6 +53,7 @@ body {
     float:right;
     padding-top:10px;
 }
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         HOME PAGE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -57,6 +61,7 @@ body {
 .mainDiv{
     position: relative;
     text-align: center;
+
 }
 .backgroundHome {
     width:65%;
@@ -100,6 +105,7 @@ body {
 .icons:hover {
     border: solid #fff200;
 }
+
 /*ABOUT US BOXES*/
 .boxes{
     background-color:rgba(87, 86, 86,0);
