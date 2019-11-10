@@ -88,6 +88,7 @@ body {
     font-family: 'Kaushan Script', cursive;
     font-size:46px;
 }
+
 .instructions{
     position: absolute;
     top: 35%;
@@ -119,6 +120,7 @@ body {
     max-height: 50px;
     border: solid 2px transparent;
 }
+
 .icons:hover {
     border: solid #fff200;
 }
