@@ -19,10 +19,12 @@ document.addEventListener('DOMContentLoaded', function () {
             return `
             <div>
                 <p>${track.trackName}</p>
+                <p>${track.artistName}</p>
+                <div id='lyricsPlace'>
+                </div>
                 <button onclick="getLyrics('${track.trackId}')" data-trackId='${track.trackId}' data-artistId='${track.artistId}'>Get Lyrics</button>
+                
             </div>
-            <div id='lyricsPlace'>
-            </div> 
             `
         })
         element.innerHTML = songListHTML.join('');
@@ -47,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // const artistTrackIds = trackList.map(trackObj => ({ artist_id: trackObj.track.artist_id, track_id: trackObj.track.track_id }))
             // console.log(artistTrackIds)
             // idArray = artistTrackIds
-            const trackNamesWithIds = trackList.map(trackObj => ({ trackName: trackObj.track.track_name, artistId: trackObj.track.artist_id, trackId: trackObj.track.track_id }))
+            const trackNamesWithIds = trackList.map(trackObj => ({ trackName: trackObj.track.track_name, artistName: trackObj.track.artist_name, artistId: trackObj.track.artist_id, trackId: trackObj.track.track_id }))
             console.log(trackNamesWithIds)
             renderSongList(trackNamesWithIds, songListElement);
         })
