@@ -55,6 +55,9 @@ body {
     padding-top:10px;
 }
 
+.mainDiv img{
+    margin:20%;
+}
 
 .boxes{
     background-color:rgba(87, 86, 86,0);
@@ -72,7 +75,7 @@ body {
 }
 
 .boxes-inside{
-    margin:20px;
+    margin:5px 30px 30px 30px;
 }
 
 .boxes-inside img{
@@ -154,3 +157,6 @@ hr{
     text-align: center;
 }
 
+.name{
+    font-size:20px;
+}
