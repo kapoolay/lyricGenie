@@ -38,21 +38,26 @@ body {
     text-decoration: none;
     font-size: 17px;
 }
+
 .topnav a:hover {
     background-color: #fff200;
     color: gray;
 }
+
 .topnav a.active {
     /* background-color: #7158e2; */
     background-color:blue;
     color: white;
 }
+
 .mainLogo {
     height: 40px;
     width:auto;
     float:right;
     padding-top:10px;
 }
+
+
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         HOME PAGE
@@ -63,12 +68,18 @@ body {
     text-align: center;
 
 }
+
+.mainDiv img{
+    margin:20%;
+}
+
 .backgroundHome {
     width:65%;
     height:auto;
     /* margin-left:15%; */
     position:relative;
 }
+
 .greeting{
     position: absolute;
     top: 25%;
@@ -83,6 +94,9 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         LOGIN PAGE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -94,6 +108,9 @@ body {
     background: #fff20035;
     background-image: url('/lyricGenie/images/genieLamp.png');
 }
+
+
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         MEET THE TEAM PAGE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -115,9 +132,11 @@ body {
     flex-direction:row;
     justify-content: center;
 }
+
 .boxes-inside{
-    margin:20px;
+    margin:5px 30px 30px 30px;
 }
+
 .boxes-inside img{
     background-color:rgba(87, 86, 86, 0);
     border:none;
@@ -144,6 +163,7 @@ body {
     text-align: center;
 }
 
-hr {
-    width:80%;
+
+.name{
+    font-size:20px;
 }
