@@ -18,13 +18,11 @@ document.addEventListener('DOMContentLoaded', function () {
         songListHTML = songsArray.map(function (track) {
             return `
             <div>
-                <h4>Song Title</h4>
-                <p>${track.trackName}</p>
-                <h4>Artist</h4>
-                <p>${track.artistName}</p>
-                <textarea id='lyricsPlace' rows="10" cols="20" wrap="hard">
-                </textarea>
+                <h2>Song Title: ${track.trackName}</h2>
+                <h2 >Artist: ${track.artistName}</h2>
                 <button onclick="getLyrics('${track.trackId}')" data-trackId='${track.trackId}' data-artistId='${track.artistId}'>Get Lyrics</button>
+                <textarea id='lyricsPlace' rows="10" cols="20" wrap="hard" style="text-align: center";>
+                </textarea>
             </div>
             `
         })
