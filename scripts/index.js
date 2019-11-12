@@ -69,6 +69,6 @@ const getLyrics = (trackId) => {
 
 };
 
-function renderLyrics(lyrics, songElement) {
-    console.log(lyrics, songElement)
-} ;
+// function renderLyrics(lyrics, songElement) {
+//     console.log(lyrics, songElement)
+// } ;
