@@ -175,6 +175,8 @@ body {
     font-size:20px;
 }
 
+
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         SONGS PAGE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -188,6 +190,7 @@ body {
 #search-bar {
     border: 2px solid #fff200;
     border-right: none;
+    margin-bottom: 100px;
     padding: 5px;
     border-radius: 5px 0 0 5px;
     outline: none;
@@ -215,6 +218,14 @@ body {
     background: darkgrey
 }
 
+.searchResult {
+    border: 10px rgba(0, 0, 0, 0.637) solid;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: rgb(221, 221, 221);
+
+}
+
 .container {
     width: 50%;
     position: absolute;
@@ -240,4 +251,12 @@ body {
     display: inline-block;
     margin-top: 120px;
     margin-bottom: 60px;
+}
+
+#lyricsPlace {
+    position: sticky;
+    top: 200px;;
+    margin-top: 150px;
+    color: white;
+    background-color: blue;
 }
