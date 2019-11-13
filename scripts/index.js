@@ -21,8 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 <h2>Song Title: ${track.trackName}</h2>
                 <h2 >Artist: ${track.artistName}</h2>
                 <button onclick="getLyrics('${track.trackId}')" data-trackId='${track.trackId}' data-artistId='${track.artistId}'>Get Lyrics</button>
-                <textarea id='lyricsPlace' rows="10" cols="20" wrap="hard" style="text-align: center";>
-                </textarea>
             </div>
             `
         })
