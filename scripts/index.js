@@ -17,11 +17,14 @@ document.addEventListener('DOMContentLoaded', function () {
     function renderSongList(songsArray, element) {
         songListHTML = songsArray.map(function (track) {
             return `
-            <div>
-                <h2>Song Title: ${track.trackName}</h2>
-                <h2 >Artist: ${track.artistName}</h2>
+            <div class="searchResult">
+                <h2><b>Song Title:</b> ${track.trackName}</h2><br>
+                <h2 ><b>Artist:</b> ${track.artistName}</h2>
                 <button onclick="getLyrics('${track.trackId}')" data-trackId='${track.trackId}' data-artistId='${track.artistId}'>Get Lyrics</button>
             </div>
+            <br>
+            <br>
+            <br>
             `
         })
         element.innerHTML = songListHTML.join('');
@@ -43,9 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
             // console.log(response.data.message.body.track_list);
             const trackList = response.data.message.body.track_list
             console.log(trackList)
-            // const artistTrackIds = trackList.map(trackObj => ({ artist_id: trackObj.track.artist_id, track_id: trackObj.track.track_id }))
-            // console.log(artistTrackIds)
-            // idArray = artistTrackIds
             const trackNamesWithIds = trackList.map(trackObj => ({ trackName: trackObj.track.track_name, artistName: trackObj.track.artist_name, artistId: trackObj.track.artist_id, trackId: trackObj.track.track_id }))
             console.log(trackNamesWithIds)
             renderSongList(trackNamesWithIds, songListElement);
@@ -64,7 +64,3 @@ const getLyrics = (trackId) => {
     });
 
 };
-
-// function renderLyrics(lyrics, songElement) {
-//     console.log(lyrics, songElement)
-// } ;
