@@ -32,16 +32,16 @@ document.addEventListener('DOMContentLoaded', function () {
     //Form Submit Listener - search button for the songs
     document.getElementById('search-form').addEventListener('submit', function (event) {
         event.preventDefault();
-        console.log('button is working');
+        // console.log('button is working');
 
         let searchString = document.getElementById('search-bar').value;
         console.log(searchString);
 
         //FUNCTION TO GET LIST OF SONGS USING SUBMITTED LYRICS
-        axios.get('https://api.musixmatch.com/ws/1.1/track.search?q_lyrics=' + searchString + '&apikey=a311818244ac163b84e06d86a8ec727f').then(function (response) {
+        axios.get('https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.search?q_lyrics=' + searchString + '&apikey=a311818244ac163b84e06d86a8ec727f').then(function (response) {
             // console.log(response.data.message.body.track_list);
             const trackList = response.data.message.body.track_list
-            console.log(trackList)
+            // console.log(trackList)
             const trackNamesWithIds = trackList.map(trackObj => ({ trackName: trackObj.track.track_name, artistName: trackObj.track.artist_name, artistId: trackObj.track.artist_id, trackId: trackObj.track.track_id }))
             console.log(trackNamesWithIds)
             renderSongList(trackNamesWithIds, songListElement);
@@ -58,30 +58,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
 const getLyrics = (event) => {
     const track = JSON.parse(event.target.dataset.track);
-    axios.get('https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=' + track.trackId + '&apikey=a311818244ac163b84e06d86a8ec727f').then(function (response) {
+    axios.get('https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=' + track.trackId + '&apikey=a311818244ac163b84e06d86a8ec727f').then(function (response) {
         let lyrics = response.data.message.body.lyrics.lyrics_body
-        console.log(lyrics);
+        // console.log(lyrics);
 
         var loadLyrics = document.getElementById('lyricsPlace');
         loadLyrics.innerHTML = lyrics;
     });
-    const videoId = getVideoId (track)
-    const videoHtml = getVideoEmbed (videoId)
+    const videoId = getVideoId(track)
+    const videoHtml = getVideoEmbed(videoId)
     $("#audioVideo").html(videoHtml)
 };
 
+var videoId = '';
+
 function getVideoId (track) {
-    axios.get('https://www.googleapis.com/youtube/v3/search?part=id&q=' + track.trackName + '&type=video&key=AIzaSyBO4BaHG8PaML9x_Y00pWhVQ44eB7uVdNk').then(function (response) {
+    axios.get('https://cors-anywhere.herokuapp.com/https://www.googleapis.com/youtube/v3/search?part=id&q=' + track.trackName + '&type=video&key=AIzaSyBO4BaHG8PaML9x_Y00pWhVQ44eB7uVdNk').then(function (response) {
         console.log(response);
-        const videoId = response.data.items[0].id.videoId;
+        videoId = response.data.items[0].id.videoId;
         console.log("video is working");
-        console.log(videoId);
+        // console.log(videoId);
         return videoId;
     });
 }
 
+
 function getVideoEmbed (videoId) {
     return `
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" frameborder="100" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
 }
+
+
 
