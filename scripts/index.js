@@ -31,6 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
+    //Hide display and then when they search make it show up
+
 
     //Form Submit Listener - search button for the songs
     document.getElementById('search-form').addEventListener('submit', function (event) {
