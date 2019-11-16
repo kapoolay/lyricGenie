@@ -4,9 +4,6 @@
 const songListElement = document.getElementById('songList');
 
 
-
-
-
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         RENDER FUNCTION
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
