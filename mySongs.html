@@ -25,7 +25,7 @@
                 <a href="meetTheTeam.html">Meet The Team</a>
             </div>
             <div class="col-md-6">
-                <img class="img-fluid mainLogo" src="images/logoGold.png">
+                <img class="img-fluid mainLogo" src="images/logoGold.png" alt="Lyric Genie Logo">
             </div>
     </div>
 
@@ -37,7 +37,6 @@
                     <input id="search-bar" class="form-control search-bar" placeholder="Search for a song...">
                     <button type="submit" class="searchButton">
                     <i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
                 </div>
             </form>
         </div>
@@ -48,12 +47,13 @@
         <!-- SONGS WILL GENERATE HERE -->
         </div>
         <div class="col-4">
-        <!-- LYRICS WILL GENERATE HERE -->
-            <textarea id='lyricsPlace' rows="10" cols="20" wrap="hard" style="text-align: center";>
-            </textarea>
-        </div>
-        <div class="col-4" id='audioVideo'>
-        <!-- AUDIO/VIDEO WILL GENERATE HERE -->
+            <div>
+            <!-- LYRICS WILL GENERATE HERE -->
+                <textarea id='lyricsPlace' rows="10" cols="20" wrap="hard" style="text-align: center"></textarea>
+            </div>
+            <div id='audioVideo'>
+            <!-- AUDIO/VIDEO WILL GENERATE HERE -->
+            </div>
         </div>
     </div>
     <script src='scripts/index.js'></script>
