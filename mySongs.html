@@ -13,6 +13,7 @@
     <link rel='stylesheet' type='text/css' href='css/styles.css'>
     <script type="text/javascript" src="http://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOP"></script>
     <script src="https://kit.fontawesome.com/557960709c.js" crossorigin="anonymous"></script>
+    
 </head>
 
 <body>
@@ -28,33 +29,34 @@
             </div>
     </div>
 
-<!-- Search form -->
-
-<div class="container">
-    <div class="container-inner">
-        <form id="search-form">
-            <div class="input-group input-group-lg input-wrapper">
-                <input id="search-bar" class="form-control search-bar" placeholder="Search for a song...">
-                <button type="submit" class="searchButton">
-                <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-            </div>
-        </form>
+    <!-- Search Bar -->
+    <div class="container">
+        <div class="container-inner">
+            <form id="search-form">
+                <div class="input-group input-group-lg input-wrapper">
+                    <input id="search-bar" class="form-control search-bar" placeholder="Search for a song...">
+                    <button type="submit" class="searchButton">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div class="row" id="songListContainer">
-    <div class="col-6" id='songList'>
-    <!-- SONGS WILL GENERATE HERE -->
+    <div class="row" id="songListContainer">
+        <div class="col-4" id='songList'>
+        <!-- SONGS WILL GENERATE HERE -->
+        </div>
+        <div class="col-4">
+        <!-- LYRICS WILL GENERATE HERE -->
+            <textarea id='lyricsPlace' rows="10" cols="20" wrap="hard" style="text-align: center";>
+            </textarea>
+        </div>
+        <div class="col-4" id='audioVideo'>
+        <!-- AUDIO/VIDEO WILL GENERATE HERE -->
+        </div>
     </div>
-    <div class="col-6">
-        <textarea id='lyricsPlace' rows="10" cols="20" wrap="hard" style="text-align: center";>
-        </textarea>
-    </div>
-</div>
-   
-
-<script src='scripts/index.js'></script>
+    <script src='scripts/index.js'></script>
 </body>
 
 </html>

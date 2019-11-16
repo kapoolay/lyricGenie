@@ -1,5 +1,5 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            STATE
+        STATE/VARIABLES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 const songListElement = document.getElementById('songList');
 
@@ -12,15 +12,14 @@ const songListElement = document.getElementById('songList');
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 document.addEventListener('DOMContentLoaded', function () {
-
-
     function renderSongList(songsArray, element) {
         songListHTML = songsArray.map(function (track) {
+            const trackString = JSON.stringify(track);
             return `
             <div class="searchResult">
                 <h2><b>Song Title:</b> ${track.trackName}</h2><br>
                 <h2 ><b>Artist:</b> ${track.artistName}</h2>
-                <button onclick="getLyrics('${track.trackId}')" data-trackId='${track.trackId}' data-artistId='${track.artistId}'>Get Lyrics</button>
+                <button onclick="getLyrics(event)" data-track='${JSON.stringify(track)}' data-trackId='${track.trackId}' data-artistId='${track.artistId}'>Get Lyrics</button>
             </div>
             <br>
             <br>
@@ -30,8 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
         element.innerHTML = songListHTML.join('');
     }
 
-
-
     //Form Submit Listener - search button for the songs
     document.getElementById('search-form').addEventListener('submit', function (event) {
         event.preventDefault();
@@ -39,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let searchString = document.getElementById('search-bar').value;
         console.log(searchString);
-
 
         //FUNCTION TO GET LIST OF SONGS USING SUBMITTED LYRICS
         axios.get('https://api.musixmatch.com/ws/1.1/track.search?q_lyrics=' + searchString + '&apikey=a311818244ac163b84e06d86a8ec727f').then(function (response) {
@@ -54,13 +50,39 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-const getLyrics = (trackId) => {
-    axios.get('https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=' + trackId + '&apikey=a311818244ac163b84e06d86a8ec727f').then(function (response) {
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+          FUNCTIONS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+const getLyrics = (event) => {
+    const track = JSON.parse(event.target.dataset.track);
+    axios.get('https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=' + track.trackId + '&apikey=a311818244ac163b84e06d86a8ec727f').then(function (response) {
         let lyrics = response.data.message.body.lyrics.lyrics_body
         console.log(lyrics);
 
         var loadLyrics = document.getElementById('lyricsPlace');
         loadLyrics.innerHTML = lyrics;
     });
-
+    const videoId = getVideoId (track)
+    const videoHtml = getVideoEmbed (videoId)
+    $("#audioVideo").html(videoHtml)
 };
+
+function getVideoId (track) {
+    axios.get('https://www.googleapis.com/youtube/v3/search?part=id&q=' + track.trackName + '&type=video&key=AIzaSyBO4BaHG8PaML9x_Y00pWhVQ44eB7uVdNk').then(function (response) {
+        console.log(response);
+        const videoId = response.data.items[0].id.videoId;
+        console.log("video is working");
+        console.log(videoId);
+        return videoId;
+    });
+}
+
+function getVideoEmbed (videoId) {
+    return `
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;  picture-in-picture" allowfullscreen></iframe>
+    <br>
+    `
+}
