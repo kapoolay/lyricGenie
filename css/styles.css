@@ -194,6 +194,7 @@ body {
     border-radius: 10px;
     outline: none;
     color: #9DBFAF;
+    cursor: text;
     flex: 1;
 }
 
@@ -255,6 +256,7 @@ body {
     color: white;
     background-color: blue;
 }
+
 /* .searchButton {
     width: 45px;
     height: 45px;
