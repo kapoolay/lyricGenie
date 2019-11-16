@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="searchResult">
                 <h2><b>Song Title:</b> ${track.trackName}</h2><br>
                 <h2 ><b>Artist:</b> ${track.artistName}</h2>
-                <button onclick="getLyrics(event)" data-track='${JSON.stringify(track)}' data-trackId='${track.trackId}' data-artistId='${track.artistId}'>Get Lyrics</button>
+                <button class="lyricButton" onclick="getLyrics(event)" data-track='${JSON.stringify(track)}' data-trackId='${track.trackId}' data-artistId='${track.artistId}'>Get Lyrics</button>
             </div>
             <br>
             <br>
@@ -65,28 +65,30 @@ const getLyrics = (event) => {
         var loadLyrics = document.getElementById('lyricsPlace');
         loadLyrics.innerHTML = lyrics;
     });
-    const videoId = getVideoId(track)
-    const videoHtml = getVideoEmbed(videoId)
-    $("#audioVideo").html(videoHtml)
-};
-
-var videoId = '';
-
-function getVideoId (track) {
+    console.log(track)
     axios.get('https://cors-anywhere.herokuapp.com/https://www.googleapis.com/youtube/v3/search?part=id&q=' + track.trackName + '&type=video&key=AIzaSyBO4BaHG8PaML9x_Y00pWhVQ44eB7uVdNk').then(function (response) {
         console.log(response);
-        videoId = response.data.items[0].id.videoId;
+        let videoIdTwo = response.data.items[0].id.videoId;
         console.log("video is working");
-        // console.log(videoId);
-        return videoId;
+        console.log(videoIdTwo);
+        // const videoIdTwo = getVideoId(track)
+        console.log(videoIdTwo + 'this is the one')
+        const videoHtml = getVideoEmbed(videoIdTwo)
+        $("#audioVideo").html(videoHtml)
     });
-}
+};
+
+
+// function getVideoEmbed (videoId) {
+//     return `
+//     <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" frameborder="100" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+// }
 
 
 function getVideoEmbed (videoId) {
+    console.log(`https://www.youtube.com/watch?v=${videoId}`)
     return `
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" frameborder="100" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+    <div>
+    <a href="https://www.youtube.com/watch?v=${videoId}"><button type="button" class="videoButton">See the video!</button></a>
+    </div>`
 }
-
-
-

@@ -13,6 +13,7 @@
     <link rel='stylesheet' type='text/css' href='css/styles.css'>
     <script type="text/javascript" src="http://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOP"></script>
     <script src="https://kit.fontawesome.com/557960709c.js" crossorigin="anonymous"></script>
+    
 </head>
 
 <body>
@@ -24,7 +25,7 @@
                 <a href="meetTheTeam.html">Meet The Team</a>
             </div>
             <div class="col-md-6">
-                <img class="img-fluid mainLogo" src="images/logoGold.png">
+                <img class="img-fluid mainLogo" src="images/logoGold.png" alt="Lyric Genie Logo">
             </div>
     </div>
 
@@ -36,29 +37,25 @@
                     <input id="search-bar" class="form-control search-bar" placeholder="Search for a song...">
                     <button type="submit" class="searchButton">
                     <i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
                 </div>
             </form>
         </div>
     </div>
 
     <div class="row" id="songListContainer">
-        <div class="col-4" id='songList'>
+        <div class="col-6" id='songList'>
         <!-- SONGS WILL GENERATE HERE -->
         </div>
-        <div class="col-4">
+        <div class="col-6">
             <div>
             <!-- LYRICS WILL GENERATE HERE -->
-                <textarea id='lyricsPlace' rows="10" cols="20" wrap="hard" style="text-align: center";>
-                </textarea>
+                <textarea id='lyricsPlace' rows="10" cols="20" wrap="hard" style="text-align: center"></textarea>
             </div>
             <div id='audioVideo'>
             <!-- AUDIO/VIDEO WILL GENERATE HERE -->
             </div>
         </div>
     </div>
-    
-
     <script src='scripts/index.js'></script>
 </body>
 
